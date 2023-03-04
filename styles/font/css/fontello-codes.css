@@ -1,0 +1,9 @@
+
+.icon-line:before { content: '\e800'; } /* '' */
+.icon-fb:before { content: '\e801'; } /* '' */
+.icon-address:before { content: '\e802'; } /* '' */
+.icon-phone:before { content: '\e803'; } /* '' */
+.icon-left-open-big:before { content: '\e804'; } /* '' */
+.icon-scrolldown:before { content: '\e805'; } /* '' */
+.icon-right-open-big:before { content: '\e806'; } /* '' */
+.icon-close:before { content: '\e809'; } /* '' */

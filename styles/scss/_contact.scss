@@ -1,0 +1,38 @@
+.contact-section{
+    background: #08184B;
+    padding: 0 40px;
+    .block{
+        max-width: 1596px;
+        height: 750px;
+        background: url(images/common/contact-bg.jpg) center no-repeat;
+        .box{
+            max-width: 688px;
+            .title-inner{
+                position: relative;
+                padding-top: 36px;
+                &::before{
+                    content:"";
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: -53px;
+                    width: 150px;
+                    height: 1px;
+                    background: #A08862;
+                }
+            }
+            .form-group {
+                display: flex;
+                padding: 16px 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+
+                input {
+                    color: white;
+                    padding-left: 20px;
+                    width: 0;
+                    flex-grow: 1;
+                }
+            }
+        }  
+    }
+}
