@@ -4,8 +4,8 @@ header{
     left: 0;
     width: 100%;
     color:white;
-    font-weight: bold; 
-    z-index: 3;
+    z-index: 20;
+    padding-right: 15px;
     &.scrollMode{
         .menu-wrapper {
             height: 94px;
@@ -46,8 +46,10 @@ header{
 
     
         .menu{
+            font-weight: bold;
+            margin-right: 20px;
             li{
-                padding: 0 30px;
+                padding: 0 31px;
                 &+li{
                     position: relative;
                     &::before {
@@ -74,57 +76,90 @@ header{
             }
         }
         .society{
-            font-size: 24px;
+            font-size: 22px;
         }
         .reserve-btn{
             height: 40px;
             width: 140px;
-            background: rgba(199, 161, 100, 1);
+            background: #A08862;
         }
     }
+    @media (max-width:1199px){
+        .menu-wrapper{
+            height: 94px;
+            .logo-wrapper{
+                margin-left: 40px;
+                .logo-2{
+                    opacity: 1;
+                    pointer-events: all;
+                }
 
+            }
 
+        }
+    }
+    @media (max-width:991px){
+        .menu-wrapper .menu li{
+                padding: 0 14px;
+        }
+    }
     @media (max-width:767px){
-        height: 58px;
+        height: 138px;
         background: rgba(8, 83, 99, 0.9);
         &.openMenu{
             .menu-wrapper{
                 transform: none;
             }
+            .mobile-header .menu-toggle {
+                .bar{
+
+                    &.bar-1{
+                        top: 6px;
+                        transform: rotate(-45deg);
+                        width: 20px;
+                    }
+                    &.bar-2{
+                        opacity: 0;
+                    }
+                    &.bar-3{
+                        top: 6px;
+                        transform: rotate(45deg);
+                        width: 20px;
+                    }
+                }
+            }
         }
         .mobile-header{
             padding: 0 20px;
             .mobile-logo{
-                width: 110px;
-            }
-            .mobile-society{
-                a{
-                    font-size: 18px;
+                width: 105px;
+                img{
+                    width: 100%;
                 }
-                button{
-                    font-size: 20px;
-                }
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
             }
             .menu-toggle {
-                position: relative;
-                height: 20px;
-
+                position: absolute;
+                height: 11px;
+                top: 26px;
+                right: 28px;
+                width: 24px;
                 .bar {
-                    height: 2px;
+                    height: 1px;
                     background: white;
-
-                    &.bar-1 {
-                        width: 26px;
-                    }
-
+                    width: 24px;
+                    transition: all 0.5s;
+                    position: absolute;
+                    left: 0;
                     &.bar-2 {
-                        width: 18px;
-                        margin-top: 6px;
+                        top: 5px;
                     }
 
                     &.bar-3 {
-                        width: 22px;
-                        margin-top: 6px;
+                        top: 9px;
                     }
                 }
             }
@@ -135,147 +170,89 @@ header{
             height: auto;
             overflow-y: auto;
             position: fixed;
-            width: 390px;
-            top: 0px;
+            width: 100%;
+            top: 138px;
             left: 0;
-            height: 100vh;
-            transform: translateX(-390px);
+            height: calc(100vh - 138px);
+            transform: translateX(-100%);
             transition: transform 0.3s;
-            background: #085363;
-            background-image: url(images/common/menu-bg.png);
-            background-position: 63% 60%;
+            background: #08184B;
             flex-direction: column;
             justify-content: space-between;
-            .close-btn{
-                width: 60px;
-                line-height: 60px;
-                background: #073742;
-            }
-            .logo-wrapper{
-                position: static;
-                transform: none;
-                opacity: 1;
-                pointer-events: all;
-                width: 132px;
-                padding-bottom: 50px;
-                .logo{
-                    opacity: 1;
-                    
-                }
-            }
-            .menu{
-                flex-grow: 1;
-                display: flex;
+            .right-block{
                 flex-direction: column;
-                justify-content: space-around;
-                margin-left: 0;
-                li{
-                    a{
-                        &::after{
+                height: 100%;
+                width: 100%;
+                padding-top: 38px;
+                .menu{
+                    flex-grow: 1;
+                    width: 100%;
+                    margin-right: 0;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    min-height: 254px;
+                    li{
+                        padding: 0;
+                        flex:0 0 33.33%;
+                        border-bottom:1px solid rgba(255,255,255,0.15);
+                        display: flex;
+                        padding-left: 10px;
+                        &::before{
                             display: none;
                         }
-                        span{
-                            &:nth-child(1){
-                                font-size: 18px; 
-                            }
-                            &:nth-child(2){
-                                font-size: 32px;
-                                margin-top:-5px;
+                        a{
+                            color:white;
+                            display: table;
+                            width: 265px;
+                            margin: auto;
+                            letter-spacing: 0.8px;
+                            >span{
+                                >span{
+                                    &:nth-child(1){
+                                        margin-top: 8px;
+                                        margin-right: 10px;
+                                    }
+                                    &:nth-child(2){
+                                        >span{
+                                            &:nth-child(1){
+                                                font-size: 26px;
+                                                font-weight: bold;
+                                            }
+                                            &:nth-child(2){
+                                                font-size: 16px;
+                                                font-weight: 600;
+                                                margin-top: -5px;
+                                            }
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
                 }
-            }
-            .left-block{
-                padding-top: 53px;
-                height: 100%;
-                .box{
-                    display: flex;
+                .other-box{
                     flex-direction: column;
-                }
-            }
-            .right-block{
-                border-top:1px solid rgba(255, 255, 255, 0.15); 
-                padding-top: 25px;
-                margin-top: 34px;
-            }
-            .society{
-                margin-bottom: 36px;
-            }
-            .reserve-btn{
-                height: 52px;
-                width: 100%;
-                margin-bottom: 30px;
-            }
-        }
-        @media (max-height:730px) {
-            .menu-wrapper {
-                .logo-wrapper {
-                    padding-bottom: 20px;
+                    flex-wrap: nowrap;
+                    .tel{
+                        letter-spacing: 3px;
+                        span{
+                            
+                        }
+                    }
+                    .reserve-btn {
+                        order:1;
+                        height: 48px;
+                        width: 262px;
+                    }
+                    .society{
+                        font-size: 20px;
+                    }
                 }
 
-                .right-block {
-                    margin-top: 20px;
-                }
+
             }
-        }
-
-        @media (max-height:670px) {
-            .menu-wrapper {
-                .left-block {
-                    padding-top: 30px;
-                }
-
-                .logo-wrapper {
-                    padding-bottom: 20px;
-                }
-
-                .right-block {
-                    margin-top: 10px;
-                    padding-top: 10px;
-                }
-
-                .society {
-                    margin-bottom: 20px;
-                }
-
-                .reserve-btn {
-                    margin-bottom: 15px;
-                }
-            }
-        }
-
-        @media (max-height:575px) {
-            .menu-wrapper .close-btn {
-                line-height: 45px;
-                width: 45px;
-            }
-
-            .menu-wrapper .menu li a span:nth-child(1) {
-                font-size: 16px;
-            }
-
-            .menu-wrapper .menu li a span:nth-child(2) {
-                font-size: 26px;
-            }
-
-        }
-
-        @media (max-height:525px) {
-            .menu-wrapper .menu li a span:nth-child(1) {
-                font-size: 24px;
-            }
-
-            .menu-wrapper .menu li a span:nth-child(2) {
-                display: none !important;
-            }
-        }
-    }
-    @media (max-width:575px){
-        .menu-wrapper{
-            width: 100%;
-            transform: translateX(-100%);
         }
 
     }
+
 }

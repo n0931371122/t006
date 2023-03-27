@@ -1,5 +1,7 @@
 #data{
     padding: 50px;
+        font-family: "Montserrat",
+        "Noto Sans TC";
     h1 {
         font-size: 28px;
     }
@@ -23,7 +25,7 @@
     } 
     .submit,
     .excel {
-        background: rgba(8, 83, 99, 1);
+        background: #08184B;
         color:white;
         height: 46px;
         padding: 0 19px;
@@ -34,7 +36,7 @@
             font-size: 24px;
         }
         &:hover{
-            background: #096577;
+            background: #0C2165;
         }
     }
     table{
@@ -63,7 +65,7 @@
 }
 #ui-datepicker-div{
     .ui-widget-header{
-        background: rgba(8, 83, 99, 1);
-        border:1px solid rgba(8, 83, 99, 1);
+        background: #08184B;
+        border:1px solid #08184B;
     }
 }

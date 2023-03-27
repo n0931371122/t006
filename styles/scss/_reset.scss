@@ -1,7 +1,10 @@
 body {
-    font-family: "TrajanPro", "Noto Serif TC";
+    font-family: "TrajanPro", "Noto Sans TC";
     font-size: 18px;
     overflow-x: hidden;
+    @media(max-width:991px){
+        font-size: 16px;
+    }
 }
 
 a {

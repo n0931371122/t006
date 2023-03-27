@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>興富發</title>
+    <title>東煒大局</title>
     <link rel="icon" type="image/x-icon" href="styles/images/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +18,7 @@
 <body>
     <div id="data">
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <h1>興富發T1官網 - 客戶聯絡資料</h1>
+            <h1>東煒官網 - 客戶聯絡資料</h1>
             <div class="d-flex">
                 <form class="d-flex align-items-center" action="">
                     <div class="date-wrapper">

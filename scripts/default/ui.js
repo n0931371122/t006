@@ -8,10 +8,7 @@ $(function (){
 		[layout]
     ==========================================================================*/
     $(".menu-toggle").click(() => {
-        $("header").addClass("openMenu");
-    })
-    $(".close-btn").click(() => {
-        $("header").removeClass("openMenu");
+        $("header").toggleClass("openMenu");
     })
     if(windowW>=768){
         $(window).scroll(function(){
@@ -38,154 +35,106 @@ $(function (){
         
     });
 
-     /* ==========================================================================
-		[common]
-    ==========================================================================*/
-    // gsap.registerPlugin(ScrollTrigger);
-    // gsap.fromTo(".banner-section .move-element",{y:0}, {
-    //   y: 100,
-    //   scrollTrigger: {
-    //     scrub: 1,
-    //     trigger: "#move-trigger", //觸發得物件
-    //     start: "top top", // (物件開始位置, 卷軸開始位置) top center bottom px
-    //     endTrigger:"#move-end-trigger"
-    //   }
-    // });
-
 
      /* ==========================================================================
 		[page]
     ==========================================================================*/
     //brand
-    if($("#brand").length!==0){  
-      $("header .menu-wrapper .menu li").eq(0).addClass("active");
-      var controller = new ScrollMagic.Controller();
+    if($("#brand").length!==0){
+		let section1Block1Swiper=new Swiper('.section-1 .block-1 .swiper-1', {
+			loop:true,
+			speed:800,
+			navigation: {
+				nextEl: '.section-1 .block-1 .swiper-button-next',
+				prevEl: '.section-1 .block-1 .swiper-button-prev',
+			},
+		})
+		let section1Block2Swiper = new Swiper('.section-1 .block-2 .swiper-2', {
+			loop:true,
+			speed:800,
+			allowTouchMove:false
+		})
 
-      let targetWidth=$(".section-1 .text-block img").width();
-      let targetLeft=Math.floor($(".section-1 .text-block").css("left").replace("px",""));
+		let section1Block3Swiper = new Swiper('.section-1 .block-3 .swiper-3', {
+			loop:true,
+			speed:800,
+			allowTouchMove:false
+		})
+		section1Block1Swiper.on('slideChange', function (swiper) {
+			let imgCurrentText='0'+(swiper.realIndex + 1);
+			$(".section-1 .tools .current").text(imgCurrentText);
+		});
+		section1Block1Swiper.on('slideNextTransitionStart', function () {
+			section1Block2Swiper.slideNext(800);
+			section1Block3Swiper.slideNext(800);
+		});
+		section1Block1Swiper.on('slidePrevTransitionStart', function () {
+			section1Block2Swiper.slidePrev(800);
+			section1Block3Swiper.slidePrev(800);
+		});
 
-      let value= targetWidth - windowW + targetLeft * 2;
-      var tween = TweenMax.to(".section-1 .text-block", 1, {x: -value, ease: Linear.easeNone});
+		let section3TextSwiper1 = new Swiper('.section-3 .text-swiper-1', {
+			loop:true,
+			speed:800,
+			allowTouchMove:false
+		})
+		let section3TextSwiper2 = new Swiper('.section-3 .text-swiper-2', {
+			loop:true,
+			speed:800,
+			allowTouchMove:false
+		})
+		let section3ImgSwiper = new Swiper('.section-3 .img-swiper', {
+			loop:true,
+			speed:800,
+			slidesPerGroup:3,
+			slidesPerView:3,
+			pagination: {
+				el: '.section-3 .swiper-pagination',
+				type: 'bullets',
+			},
+			navigation: {
+				nextEl: '.section-3 .swiper-button-next',
+				prevEl: '.section-3 .swiper-button-prev',
+			},
 
-
-      new ScrollMagic.Scene({triggerElement: "#trigger", duration: 300})
-              .setTween(tween)
-              .setPin("#target", {pushFollowers: false})
-              .addTo(controller);
-
-      let brandSection2Text=new Swiper('#brand .section-2 .text-swiper', {
-        loop:true,
-        autoHeight:true,
-        allowTouchMove:false,
-        speed:800,
-        pagination: {
-          el: '#brand .section-2 .swiper-pagination.fraction',
-          type: 'fraction',
-        },
-      })
-      new Swiper('#brand .section-2 .img-swiper', {
-        slidesPerView: 1.13,
-        spaceBetween: 15,
-        speed:800,
-        loop:true,
-        centeredSlides: true,
-        thumbs: {
-          swiper: brandSection2Text
-        },
-        pagination: {
-          el: "#brand .section-2 .swiper-pagination.bullets",
-          clickable: true,
-        },
-        breakpoints: {
-          576: {
-            spaceBetween: 40,
-            slidesPerView: 1.55,
-          },
-          1199: {
-            spaceBetween: 70,
-            slidesPerView: 1.55,
-          }
-        }
-      })
-
-      new Swiper('#brand .section-4 .swiper', {
-        speed:800,
-        pagination: {
-          el: "#brand .section-4 .swiper .swiper-pagination",
-          clickable: true,
-        },
-      })
+		})
+		section3ImgSwiper.on('slideNextTransitionStart', function () {
+			section3TextSwiper1.slideNext(800);
+			section3TextSwiper2.slideNext(800);
+		});
+		section3ImgSwiper.on('slidePrevTransitionStart', function () {
+			section3TextSwiper1.slidePrev(800);
+			section3TextSwiper2.slidePrev(800);
+		});
     }
 
-    //about
-    if($("#about").length!==0){
-            $("header .menu-wrapper .menu li").eq(1).addClass("active");
-        new Swiper('#about .section-1 .swiper', {
-          spaceBetween: 0,
-          loop:true,
-          centeredSlides: true,
-          speed:800,
-          navigation: {
-            nextEl: '#about .section-1 .swiper .swiper-button-next',
-            prevEl: '#about .section-1 .swiper .swiper-button-prev',
-          },
-          pagination: {
-            el: '#about .section-1 .swiper .swiper-pagination',
-            type: 'fraction',
-          },
-          breakpoints: {
-            575: {
-              slidesPerView:1.3,
-            },
-            1199: {
-              slidesPerView:1.58,
-            }
-          }
-        })
-
-        let aboutSection2Text=new Swiper('#about .section-2 .text-swiper', {
-          loop:true,
-          speed:800,
-          allowTouchMove:false
-        })
-        new Swiper('#about .section-2 .img-swiper', {
-          loop:true,
-          speed:800,
-          navigation: {
-            nextEl: '#about .section-2 .text-box .swiper-button-next',
-            prevEl: '#about .section-2 .text-box .swiper-button-prev',
-          },
-          pagination: {
-            el: '#about .section-2 .text-box .swiper-pagination',
-            type: 'fraction',
-          },
-          thumbs: {
-            swiper: aboutSection2Text
-          }
-        })
-        new Swiper('#about .section-3 .swiper', {
-          slidesPerView:1,
-          spaceBetween:52,
-          speed:800,
-          loop:true,
-          navigation: {
-            nextEl: '#about .section-3 .swiper .swiper-button-next',
-            prevEl: '#about .section-3 .swiper .swiper-button-prev',
-          },
-          pagination: {
-            el: '#about .section-3 .swiper .swiper-pagination',
-            type: 'progressbar',
-          },
-          breakpoints: {
-            768: {
-              slidesPerView:1.6,
-            },
-            991: {
-              slidesPerView:2.32,
-            }
-          }
-        })
-    }
+    //vision
+	if($("#vision").length!==0){
+		new Swiper('.section-3 .swiper', {
+			loop:true,
+			speed:800,
+			effect:"fade",
+			autoplay: {
+				delay: 3000,
+			},
+			pagination: {
+				el: '.section-3 .swiper-pagination',
+				type: 'bullets',
+			},
+		})
+		new Swiper('.section-4 .swiper', {
+			loop:true,
+			speed:800,
+			effect:"fade",
+			autoplay: {
+				delay: 3000,
+			},
+			pagination: {
+				el: '.section-4 .swiper-pagination',
+				type: 'bullets',
+			},
+		})
+	}
 
     //location
     if($("#location").length!==0){
@@ -202,10 +151,29 @@ $(function (){
 				.addTo(controller);
 
 
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.fromTo(".section-1 .img-2",{y:0}, {
+      y: -200,
+      scrollTrigger: {
+        scrub: 1,
+        trigger: ".section-1 .img-2",
+        start: "top bottom", // (物件開始位置, 卷軸開始位置) 
+      }
+    });
+    gsap.fromTo(".section-1 .img-3",{y:-200}, {
+      y: 0,
+      scrollTrigger: {
+        scrub: 1,
+        trigger: ".section-1 .img-3", 
+        start: "top bottom", // (物件開始位置, 卷軸開始位置)
+      }
+    });
+
+
 
 
 		let imgLength=$(".section-2 .img-swiper .swiper-slide").length;
-    	let imgLengthText=imgLength<10?'0'+imgLength:imgLength;
+		let imgLengthText=imgLength<10?'0'+imgLength:imgLength;
 		$(".section-2 .tools .total").text(imgLengthText)
 
 		let section2TextSwiper = new Swiper('.section-2 .text-swiper', {
@@ -216,8 +184,8 @@ $(function (){
 
 
 		let section2ImgSwiper = new Swiper('.section-2 .img-swiper', {
-			slidesPerView: 1.88,
-			spaceBetween: "14%",
+			slidesPerView: 1.2,
+			spaceBetween: 30,
 			speed:800,
 			loop:true,
 			centeredSlides: true,
@@ -231,40 +199,65 @@ $(function (){
 				progressbarOpposite:true,
 				verticalClass: "swiper-pagination-vertical",
 			},
-			thumbs: {
-				swiper: section2TextSwiper
-			},
-			// pagination: {
-			// el: "#brand .section-2 .swiper-pagination.bullets",
-			// clickable: true,
-			// },
-			// breakpoints: {
-			// 576: {
-			// 	spaceBetween: 40,
-			// 	slidesPerView: 1.55,
-			// },
-			// 1199: {
-			// 	spaceBetween: 70,
-			// 	slidesPerView: 1.55,
-			// }
-			// }
+			breakpoints: {
+				767: {
+					spaceBetween: 40,
+				},
+				991: {
+					spaceBetween: 120,
+					slidesPerView: 2,
+				},
+				1199: {
+					spaceBetween: 180,
+					slidesPerView: 2,
+				},
+				1399: {
+					spaceBetween: "14%",
+					slidesPerView: 1.88,
+				}
+			}
 		})
+
+		section2ImgSwiper.on('slideNextTransitionStart', function () {
+			section2TextSwiper.slideNext(800);
+		});
+		section2ImgSwiper.on('slidePrevTransitionStart', function () {
+			section2TextSwiper.slidePrev(800);
+		});
 
 		
 		section2ImgSwiper.on('slideChange', function (swiper) {
-    		let imgCurrentText=swiper.realIndex + 1<10?'0'+(swiper.realIndex + 1):(swiper.realIndex + 1);
+			let imgCurrentText=swiper.realIndex + 1<10?'0'+(swiper.realIndex + 1):(swiper.realIndex + 1);
 			$(".section-2 .tools .current").text(imgCurrentText)
 		});
 
-
+		let section4Img2=new Swiper('.section-4 .swiper-2', {
+			loop:true,
+			speed:800,
+		})
+		let section4Img = new Swiper('.section-4 .swiper-1', {
+			loop:true,
+			speed:800,
+			pagination: {
+				el: '.section-4 .swiper-1 .swiper-pagination',
+				type: 'bullets',
+			},
+			thumbs: {
+				swiper: section4Img2
+			},
+		})
+		section4Img.on('slideNextTransitionStart', function () {
+			section4Img2.slideNext(800);
+		});
+		section4Img.on('slidePrevTransitionStart', function () {
+			section4Img2.slidePrev(800);
+		});
     }
-
     /* ==========================================================================
 		[common]
     ==========================================================================*/
 
     $(".reserve-btn").click(() => {
-      $("header").removeClass("openMenu");
         $("html,body").animate({
             scrollTop:$(".contact-section").offset().top - $("header").height()
         },800);
@@ -274,9 +267,6 @@ $(function (){
             scrollTop:0
         },800);
     });
-
-    
-
   
     aosInit();
     /* ==========================================================================
