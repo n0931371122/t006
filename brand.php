@@ -5,7 +5,7 @@
 </head>
 <body>
     <?php include "header.php"; ?>
-    <main id="brand" class="bg-blue text-white">
+    <main id="brand" class="bg-blue text-white overflow-hidden">
         <div class="banner-section position-relative">
             <h2 class="d-none">the brand</h2>
             <div class="banner" style="background-image: url(styles/images/brand/banner.webp);"></div>
@@ -32,9 +32,8 @@
                 <div class="title-box z-2">
                     <div class="text-style-1 d-flex align-items-start notoSerifTC fs-38 fw-SemiBold">
                         <span>東煒建設</span>
-                        <span>
-                            <span class="spec TrajanPro">1<br><span class="fw-normal">/</span><br>3</span>
-                            世紀建築職人
+                        <span class="long">
+                            <span class="spec TrajanPro">1<br><span class="fw-normal">/</span><br>3</span>世紀建築職人
                         </span>
                     </div>
                 </div>
@@ -99,7 +98,7 @@
         </div>
         <div class="section-2 position-relative">
             <div class="title-block d-table mx-auto mb-4 mb-mb-5 pb-1 pb-md-0" data-aos="fade-up">
-                <span class="d-block fw-SemiBold notoSerifTC mb-sm-2">職人之築</span>
+                <span class="d-block fw-SemiBold notoSerifTC mb-1 mb-sm-2">職人之築</span>
                 <span class="title d-flex fs-103 position-relative lh-1">
                     <span>CRAFSTMAN</span>
                     <span class="d-sm-none">-</span>

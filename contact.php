@@ -51,11 +51,9 @@
 							</ol>
 						</div>
 						<button class="submit d-flex align-items-center fs-18 ms-auto mt-4 mt-lg-0" type="button">
-							<span class="notoSerifTC pe-2 pe-lg-0 me-4 me-lg-5">送出表單</span>
-							<div class="position-relative">
-								<i class="icon-send-arrow"></i>
-								<div class="circle"></div>
-							</div>
+							<span class="notoSerifTC pe-3">送出表單</span>
+							<img src="styles/images/common/arrow.png" alt="">
+							<span class="circle d-block"></span>
 						</button>
 					</div>
 				</form>

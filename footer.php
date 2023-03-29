@@ -34,10 +34,10 @@
                         <div class="d-flex align-items-center">
                             <span class="fs-13 fw-bold text-gray les-1 pe-2">follow us</span>
                             <div class="d-flex pe-3">
-                                <a class="society flex-center fs-20 mx-2" href="" target="_blank">
+                                <a class="society flex-center fs-20 mx-2" href="https://www.facebook.com/runju909" target="_blank">
                                     <i class="icon-fb-2"></i>
                                 </a>
-                                <a class="society flex-center mx-2" href="" target="_blank">
+                                <a class="society flex-center mx-2" href="https://line.me/R/ti/p/@384msktq" target="_blank">
                                     <i class="icon-line"></i>
                                 </a>
                             </div>

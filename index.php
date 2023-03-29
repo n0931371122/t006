@@ -70,25 +70,19 @@
             </div>
             <div class="link-wrapper">
                 <a class="link d-flex align-items-center fs-18 active" href="brand.php">
-                    <span class="notoSerifTC pe-2 pe-lg-0 me-4 me-lg-5">前往品牌</span>
-                    <span class="d-block position-relative">
-                        <i class="icon-send-arrow"></i>
-                        <div class="circle"></div>
-                    </span>  
+                    <span class="notoSerifTC pe-2">前往品牌</span>
+                    <img src="styles/images/common/arrow.png" alt="">
+                    <span class="circle d-block"></span>
                 </a>
                 <a class="link d-flex align-items-center fs-18" href="vision.php">
-                    <span class="notoSerifTC pe-2 pe-lg-0 me-4 me-lg-5">前往大局</span>
-                    <span class="d-block position-relative">
-                        <i class="icon-send-arrow"></i>
-                        <div class="circle"></div>
-                    </span>  
+                    <span class="notoSerifTC pe-2">前往大局</span>
+                    <img src="styles/images/common/arrow.png" alt="">
+                    <span class="circle d-block"></span>
                 </a>
                 <a class="link d-flex align-items-center fs-18" href="location.php">
-                    <span class="notoSerifTC pe-2 pe-lg-0 me-4 me-lg-5">前往地段</span>
-                    <span class="d-block position-relative">
-                        <i class="icon-send-arrow"></i>
-                        <div class="circle"></div>
-                    </span>  
+                    <span class="notoSerifTC pe-2">前往地段</span>
+                    <img src="styles/images/common/arrow.png" alt="">
+                    <span class="circle d-block"></span>
                 </a>
             </div>
             <div class="society d-flex align-content-center justify-content-center text-white">
@@ -175,9 +169,7 @@
             });
 
 
-            setTimeout(() => {
-                $(".step1 .logo").addClass("in");
-            }, 300);
+            $(".step1 .logo").addClass("in");
             setTimeout(() => {
                 $(".step1 .logo").removeClass("in");
             }, 2000);
@@ -186,16 +178,23 @@
             }, 2600);
             setTimeout(() => {
                 $("#svg-animation").addClass("in")  
+                let duration=0;
+                if($(window).width()>767){
+                    duration=15
+                }
+                else{
+                    duration=6.9
+                }
                 new Vivus('svg-animation', 
-                    {type: 'scenario-sync',duration: 10, forceRender: false ,animTimingFunction:Vivus.EASEIN}
+                    {type: 'scenario-sync',duration: duration, forceRender: false ,animTimingFunction:Vivus.EASEIN}
                 );   
             }, 3000);
             setTimeout(() => {
                 $(".step1 .content-box").addClass("in"); 
-            }, 5000);
+            }, 7000);
             setTimeout(() => {
                 $(".step1").addClass("out"); 
-            }, 6500);
+            }, 8500);
         } 
 
     </script>

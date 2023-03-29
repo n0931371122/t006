@@ -29,7 +29,7 @@
         <div class="section-1" data-aos="fade-up">
             <div class="title-block text-center mx-auto pb-5">
                 <p class="notoSerifTC fs-36 fw-SemiBold">大軸置頂 汐港湖金三角</p>
-                <p class="notoSansTC lh-18 text-lightwhite">南港、內科廠辦成本高漲，智取汐止、物流研發、製造、總部策略卡位，汐東接棒。四高二快雙港，台鐵區間車+未來民生汐止線＋基隆捷運，通勤加碼補漲力。</p>
+                <p class="notoSansTC lh-18 text-lightwhite">南港、內科廠辦成本高漲，智取汐止、物流研發、製造、總部策略卡位，汐東接棒。四高二快雙港，台鐵區間車+未來民生汐止線+基隆捷運，通勤加碼補漲力。</p>
             </div>
             <div class="position-relative">
                 <div id="trigger"></div>

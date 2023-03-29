@@ -51,12 +51,9 @@
                         background: #D0B180;
                     }
                 }
-                i{
-                    position: absolute;
-                    top: 50%;
-                    left: -60%;
-                    transform: translateY(-50%);
-                    font-size: 60px;
+                img{
+                    margin-right: -32px;
+                    z-index: 1;
                 }
                 .circle{
                     width: 60px;

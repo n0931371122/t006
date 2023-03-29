@@ -383,6 +383,8 @@
         border:1px solid rgba(255,255,255,0.4);
         line-height: 1;
         padding: 11px 10px 7px 10px;
+        white-space: nowrap;
+        display: block;
         &:nth-child(1){
             order:1;
             margin-left: 8px;
@@ -391,11 +393,20 @@
             writing-mode:initial;
             width: 18px;
             margin-bottom: -12px;
+            margin-bottom: 6px;
         }
     }
     @media (max-width:767px) {
         font-size: 24px;
         letter-spacing: 4px;
+        .long {
+            height: 270px;
+        }
+        >span{
+            .spec{
+                width: 15px;
+            }
+        }
     }
 }
 .swiper-buttons.style-1 {

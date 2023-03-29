@@ -107,7 +107,7 @@
             <div class="text-block" data-aos="fade-up">
                 <div class="pb-3">
                     <span class="d-block notoSerifTC fs-24 fw-SemiBold pb-3">大局巨擘</span>
-                    <p class="notoSansTC text-lightwhite lh-18">以尺寸升級尺度。單層920坪、整棟7400坪全樓專屬，量身擴展企業版圖。</p>
+                    <p class="notoSansTC text-lightwhite lh-18">單層950 整棟7800坪</p>
                 </div>
                 <div>
                     <span class="d-block notoSerifTC fs-24 fw-SemiBold pb-3">大界展臂</span>
